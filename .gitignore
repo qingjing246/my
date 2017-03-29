@@ -1,0 +1,19 @@
+
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+node_modules
+
+
+doc/
+package.json
+src/img/BG1l.jpg
+src/img/BG2l.jpg
+src/img/BG3l.jpg
+src/img/Thumbs.db
+src/js/jquery-1.11.1.min.js
+src/js/owl.carousel.min.js
+src/js/picturefill.js
+src/js/vendor/
