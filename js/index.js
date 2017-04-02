@@ -7,7 +7,7 @@ window.onscroll = function () {
 
 
 
-    //×÷Æ·¶¯»­
+    //ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
     function portfolio(){
         var portfolio = document.getElementsByClassName('portfolio')[0].offsetTop;
         var sTop = document.body.scrollTop;
@@ -28,9 +28,9 @@ window.onscroll = function () {
             hr8.className = '';
         }
     }
-    //¸öÈË¾­Àú½éÉÜ¶¯»­
+    //ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½
     function work(){
-        var workExperience = document.getElementsByClassName('work-experience')[0].offsetTop;
+        var workExperience = document.getElementsByClassName('work')[0].offsetTop;
         var sTop = document.body.scrollTop;
         var work = document.getElementById('work');
         var hr5 = document.getElementById('hr5');
@@ -48,7 +48,7 @@ window.onscroll = function () {
             hr6.className = '';
         }
     }
-    //¼¼ÄÜ½éÉÜ
+    //ï¿½ï¿½ï¿½Ü½ï¿½ï¿½ï¿½
     function skills(){
         var mySkills = document.getElementsByClassName('skills')[0].offsetTop;
         var sTop = document.body.scrollTop;
@@ -66,7 +66,7 @@ window.onscroll = function () {
             hr4.className = '';
         }
     }
-    //¸öÈË½éÉÜ¶¯»­
+    //ï¿½ï¿½ï¿½Ë½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½
     function about(){
         var me = document.getElementsByClassName('me')[0].offsetTop;
         var sTop = document.body.scrollTop;

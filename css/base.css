@@ -1,15 +1,31 @@
 ul,
 li,
 h2,
-p {
+p,
+H3 {
   padding: 0;
   margin: 0;
+}
+p {
+  letter-spacing: 1px;
 }
 a {
   text-decoration: none;
 }
 i {
   font-size: 42px;
+}
+h2 {
+  letter-spacing: 5px;
+}
+.spacing-m {
+  letter-spacing: 10px;
+}
+.spacing-s {
+  letter-spacing: 5px;
+}
+.spacing-ss {
+  letter-spacing: 1px;
 }
 .clearfix:before,
 .clearfix:after {
@@ -18,6 +34,63 @@ i {
 }
 .clearfix:after {
   clear: both;
+}
+/*文字弹入动画*/
+@-webkit-keyframes rollIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.rollIn0 {
+  animation: rollIn 2s ease-in-out 0s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 0s 1 alternate forwards;
+}
+.rollIn1 {
+  animation: rollIn 2s ease-in-out 2s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 1s 1 alternate forwards;
+}
+.rollIn2 {
+  animation: rollIn 2s ease-in-out 4s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 2s 1 alternate forwards;
+}
+.rollIn3 {
+  animation: rollIn 2s ease-in-out 6s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 3s 1 alternate forwards;
+}
+.rollIn4 {
+  animation: rollIn 2s ease-in-out 8s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 4s 1 alternate forwards;
+}
+.rollIn5 {
+  animation: rollIn 2s ease-in-out 10s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 5s 1 alternate forwards;
+}
+.rollIn6 {
+  animation: rollIn 2s ease-in-out 12s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 6s 1 alternate forwards;
+}
+.rollIn7 {
+  animation: rollIn 2s ease-in-out 14s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 7s 1 alternate forwards;
 }
 /*标题动画*/
 .a-swing {
@@ -274,8 +347,8 @@ header .nav {
 }
 header .nav li {
   display: inline-block;
-  font-size: 20px;
-  padding: 40px;
+  font-size: 30px;
+  padding: 30px;
 }
 header .nav a {
   color: white;
@@ -284,17 +357,21 @@ header .nav .myName {
   margin-right: 20%;
   color: white;
 }
+header .nav .myName span {
+  color: red;
+}
 header .nav-content {
   color: white;
   width: 60%;
   margin: 100px auto;
 }
 header .nav-text {
-  width: 40%;
+  width: 50%;
   float: left;
+  text-align: left;
 }
 header .phonto-box {
-  width: 60%;
+  width: 50%;
   float: left;
   text-align: center;
 }
@@ -359,6 +436,30 @@ h2 {
   padding: 50px 0 ;
   color: #fff;
 }
+.learning-skills {
+  width: 40%;
+  margin: 0 auto;
+}
+.learning-skills .learning-title {
+  margin: 40px 0;
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+.learning-skills .nodejs-info {
+  text-align: left;
+  margin: 20px 0;
+  line-height: 20px;
+}
+.learning-skills .vue-img {
+  width: 150px;
+}
+.learning-skills .mysql-img,
+.learning-skills .php-img,
+.learning-skills .angular-img,
+.learning-skills .react-img {
+  width: 150px;
+  margin: 0 30px;
+}
 .skills-text {
   width: 40%;
   margin: 0 auto;
@@ -367,6 +468,8 @@ h2 {
 }
 .skills-text p {
   margin: 20px 0;
+  opacity: 0;
+  text-align: center;
 }
 #hr3,
 #hr4 {
@@ -375,7 +478,7 @@ h2 {
 .skills-text p {
   color: #d4d4d5;
 }
-.work-experience {
+.work {
   overflow: hidden;
   padding: 50px 0;
 }
@@ -424,7 +527,7 @@ h2 {
   background-size: 100%;
 }
 .portfolio-content {
-  width: 1366px;
+  width: 100%;
   margin: 0 auto;
 }
 .work-title {

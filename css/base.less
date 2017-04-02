@@ -1,15 +1,30 @@
-ul,li,h2,p{
+ul,li,h2,p,H3{
   padding: 0;
   margin: 0;
 
 }
-
+p{
+  letter-spacing:1px;
+}
 a{
   text-decoration: none;
+
 }
 i{
   font-size: 42px;
 
+}
+h2{
+  letter-spacing:5px;
+}
+.spacing-m{
+  letter-spacing:10px;
+}
+.spacing-s{
+  letter-spacing:5px;
+}
+.spacing-ss{
+  letter-spacing:1px;
 }
 .clearfix:before,
 .clearfix:after {
@@ -19,9 +34,68 @@ i{
 .clearfix:after {
   clear: both;
 }
+/*文字弹入动画*/
+@-webkit-keyframes rollIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
 
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
 
-/*标题动画*/
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.rollIn0 {
+  animation:rollIn 2s ease-in-out 0s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 0s 1 alternate forwards;
+}
+.rollIn1 {
+  animation:rollIn 2s ease-in-out 2s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 1s 1 alternate forwards;
+}
+.rollIn2 {
+  animation:rollIn 2s ease-in-out 4s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 2s 1 alternate forwards;
+}
+.rollIn3 {
+  animation:rollIn 2s ease-in-out 6s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 3s 1 alternate forwards;
+}
+.rollIn4 {
+  animation:rollIn 2s ease-in-out 8s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 4s 1 alternate forwards;
+}
+.rollIn5 {
+  animation:rollIn 2s ease-in-out 10s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 5s 1 alternate forwards;
+}
+.rollIn6 {
+  animation:rollIn 2s ease-in-out 12s 1 alternate forwards;
+  -webkit-animation:rollIn 2s ease-in-out 6s 1 alternate forwards;
+}
+.rollIn7 {
+  animation: rollIn 2s ease-in-out 14s 1 alternate forwards;
+  -webkit-animation: rollIn 2s ease-in-out 7s 1 alternate forwards;
+}
+  /*标题动画*/
 .a-swing{
   -webkit-animation:swing 1s ease-in forwards;
   -moz-animation:swing 1s ease-in forwards;
@@ -216,11 +290,11 @@ header{
     background: rgba(0, 0, 0, .3);
     width: 100%;
     text-align: center;
-    
+
     li{
       display: inline-block;
-      font-size: 20px;
-      padding: 40px;
+      font-size: 30px;
+      padding: 30px;
     }
     a{
       color:white;
@@ -228,6 +302,9 @@ header{
     .myName{
       margin-right: 20%;
       color:white;
+      span{
+        color: red;
+      }
     }
   }
   .nav-content{
@@ -237,11 +314,12 @@ header{
 
   }
   .nav-text{
-    width:40%;
+    width:50%;
     float: left;
+    text-align: left;
   }
   .phonto-box{
-    width: 60%;
+    width: 50%;
     float: left;
     text-align: center;
   }
@@ -314,6 +392,28 @@ h2{
   padding: 50px 0 ;
   color: #fff;
 }
+.learning-skills{
+  width: 40%;
+  margin: 0 auto;
+  .learning-title{
+    margin: 40px 0;
+    font-size: 40px;
+    letter-spacing:10px;
+  }
+  .nodejs-info{
+    text-align: left;
+    margin: 20px 0;
+    line-height: 20px;
+  }
+  .vue-img{
+    width: 150px;
+  }
+
+  .mysql-img,.php-img,.angular-img,.react-img{
+  width: 150px;
+    margin: 0 30px;
+  }
+}
 .skills-text{
   width: 40%;
   margin: 0 auto;
@@ -321,6 +421,9 @@ h2{
   padding: 50px 0;
   p{
     margin: 20px 0;
+    opacity: 0;
+    text-align: center;
+
   }
 }
 #hr3,#hr4{
@@ -332,7 +435,8 @@ h2{
     color:#d4d4d5;
   }
 }
-.work-experience{
+
+.work{
   overflow: hidden;
   padding: 50px 0;
 }
@@ -389,7 +493,7 @@ h2{
 .portfolio-content{
 
 
-  width:1366px;
+  width:100%;
   margin: 0 auto;
 
 }
