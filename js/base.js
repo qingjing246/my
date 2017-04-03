@@ -39,6 +39,13 @@ window.onscroll = function (){
 
     };
     new index(t4);
+    //about-me
+    var t5 = {
+        name:'web',
+        hr1:'hr9',
+        hr2:'hr10'
+    };
+    new index(t5);
 };
 
 function skillsAnimation (){
@@ -47,37 +54,13 @@ function skillsAnimation (){
     var skills = document.getElementsByClassName('skills-text')[0];
     var p = skills.getElementsByTagName('p');
     var WH = window.innerHeight * 0.8 ;
-    console.log(mySkills-sTop);
     for(var i =0 ; i < p.length;i++){
         if(mySkills-sTop < WH && mySkills-sTop > -200){
             skills.style.opacity = '1';
             p[i].className = 'rollIn'+i ;
 
 
-        }else{
-            skills.style.opacity = '0';
-            p[i].className = '';
         }
     }
 }
-  /*  window.onscroll = function(){
-        alert(1);
-        var mySkills = document.getElementsByClassName('skills')[0].offsetTop;
-        var sTop = document.body.scrollTop;
-        var skills = document.getElementsByClassName('skills-text')[0];
-        var p = skills.getElementsByTagName('p');
-        console.log(mySkills-sTop);
-        for(var i =0 ; i < p.length;i++){
-            if(mySkills-sTop < 500 && mySkills-sTop > 0){
-                skills.style.opacity = '1';
-                p[i].className = 'rollIn'+i ;
-
-
-            }else{
-                skills.style.opacity = '0';
-                p[i].className = '';
-            }
-        }
-    };
-*/
 

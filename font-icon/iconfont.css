@@ -1,0 +1,19 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1489501882887'); /* IE9*/
+  src: url('iconfont.eot?t=1489501882887#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1489501882887') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1489501882887') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1489501882887#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+
+
+.icon-xuelirenzheng:before { content: "\e649"; }
+
+.icon-jinlingyingcaiwangtubiao12:before { content: "\e70f"; }
+
+.icon-weizhi:before { content: "\e615"; }
+
+.icon-state:before { content: "\e8dd"; }
+

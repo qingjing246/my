@@ -1,4 +1,5 @@
 var index = function (all){
+
     this.name = document.getElementsByClassName(all.name)[0].offsetTop;
     this.sTop = document.body.scrollTop;
     this.WH = window.innerHeight * 0.8 ;
@@ -9,7 +10,7 @@ var index = function (all){
     if( all.other ){
         this.other =  document.getElementById(all.other.obj);
         this.animation = all.other.animation;
-        if(this.winHight <= 500 && this.winHight > 0){
+        if(this.winHight <= 500 && this.winHight > -200){
             this.other.className = this.animation;
         }
     }
@@ -22,6 +23,6 @@ var index = function (all){
         this.hr1.className = '';
         this.hr2.className = '';
     }
-    console.log(this.WH);
+
 };
 

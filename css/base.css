@@ -6,6 +6,9 @@ H3 {
   padding: 0;
   margin: 0;
 }
+div {
+  overflow: hidden;
+}
 p {
   letter-spacing: 1px;
 }
@@ -34,6 +37,41 @@ h2 {
 }
 .clearfix:after {
   clear: both;
+}
+.forward {
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes bgchange {
+  from {
+    background: #a0a0b4;
+    border: 5px solid white;
+  }
+  to {
+    background: white;
+    border: 5px solid #c0c0c0;
+  }
+}
+@-webkit-keyframes myAbout {
+  from {
+    background: #a0a0b4;
+    border: 5px solid white;
+  }
+  to {
+    background: white;
+    border: 5px solid #c0c0c0;
+  }
+}
+@-moz-keyframes myAbout {
+  from {
+    background: #a0a0b4;
+    border: 5px solid white;
+  }
+  to {
+    background: white;
+    border: 5px solid #c0c0c0;
+  }
 }
 /*文字弹入动画*/
 @-webkit-keyframes rollIn {
@@ -334,6 +372,7 @@ h2 {
     padding-top: 5px;
   }
 }
+/*共用类*/
 header {
   background: url("../img/head.jpg") center no-repeat;
   width: 100%;
@@ -347,15 +386,19 @@ header .nav {
 }
 header .nav li {
   display: inline-block;
-  font-size: 30px;
+  font-size: 20px;
   padding: 30px;
 }
 header .nav a {
   color: white;
 }
+header .nav a:hover {
+  color: red;
+}
 header .nav .myName {
-  margin-right: 20%;
+  margin-right: 30%;
   color: white;
+  font-size: 40px;
 }
 header .nav .myName span {
   color: red;
@@ -384,7 +427,15 @@ header .my-phomto {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0 0 15px #838383;
+  -moz-box-shadow: 0 0 15px #838383;
+  box-shadow: 0 0 15px #838383;
+}
+header .my-phomto:hover {
+  -webkit-box-shadow: 0 0 15px #f3f3f3;
+  -moz-box-shadow: 0 0 15px #f3f3f3;
+  box-shadow: 0 0 15px #f3f3f3;
 }
 hr {
   display: inline-block;
@@ -404,29 +455,80 @@ hr {
   text-align: center;
   margin: 0 auto;
 }
+.about {
+  background: #eeeeee;
+}
 .about-me .me-title {
   width: 40%;
   text-align: center;
   margin: 50px auto;
 }
-.about-me .social a {
+.about-myinfo {
+  background: #a0a0b4;
+  padding: 20px;
+  border-radius: 20px;
+  width: 50%;
+  margin: 100px auto 100px;
+  text-align: center;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: space-between;
+}
+.about-list {
+  display: inline-block;
+  height: 150px;
+}
+.list-icon {
   display: inline-block;
   width: 60px;
   height: 60px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  background: green;
-  margin: 50px;
-}
-.about-me .social i {
-  font-size: 30px;
+  border: 5px solid white;
+  border-radius: 45px;
+  text-align: center;
   line-height: 60px;
+  cursor: pointer;
+}
+.list-icon .iconfont {
+  color: black;
+}
+.list-icon:hover {
+  animation: bgchange 1s;
+  -webkit-animation: bgchange 1s;
+  -moz-animation: bgchange 1s;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-box-shadow: 0 0 10px #c0c0c0;
+  -moz-box-shadow: 0 0 10px #c0c0c0;
+  box-shadow: 0 0 10px #c0c0c0;
+}
+.iconfont {
+  font-size: 40px;
+}
+.list-info {
   color: white;
+  font-size: 20px;
+  padding: 20px 0 ;
+}
+.list-info span {
+  margin: 0 5px;
+}
+.about_info {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 h2 {
   font-size: 40px;
   text-align: center;
+  padding: 40px 0;
 }
 .center {
   text-align: center;
@@ -434,31 +536,65 @@ h2 {
 .skills {
   background: #28282e;
   padding: 50px 0 ;
-  color: #fff;
+  color: #f6f6f7;
 }
 .learning-skills {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
+  text-align: center;
+}
+.learning-skills h4 {
+  font-size: 40px;
+  text-align: center;
 }
 .learning-skills .learning-title {
   margin: 40px 0;
   font-size: 40px;
   letter-spacing: 10px;
 }
-.learning-skills .nodejs-info {
+.learning-skills .learning-box {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.learning-skills .learning-box .vue-img,
+.learning-skills .learning-box .node-img {
+  width: 50%;
+}
+.learning-skills .learning-box .nodejs,
+.learning-skills .learning-box .vuejs {
+  width: 40%;
+  height: 100%;
+}
+.learning-skills .learning-box .nodejs p,
+.learning-skills .learning-box .vuejs p {
   text-align: left;
-  margin: 20px 0;
-  line-height: 20px;
 }
-.learning-skills .vue-img {
-  width: 150px;
+.learning-skills .future {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
 }
-.learning-skills .mysql-img,
+.learning-skills .php,
+.learning-skills .mysql,
+.learning-skills .angular {
+  width: 30%;
+}
+.learning-skills .php p,
+.learning-skills .mysql p,
+.learning-skills .angular p {
+  text-align: left;
+}
 .learning-skills .php-img,
-.learning-skills .angular-img,
-.learning-skills .react-img {
-  width: 150px;
-  margin: 0 30px;
+.learning-skills .mysql-img,
+.learning-skills .angular-img {
+  width: 50%;
 }
 .skills-text {
   width: 40%;
@@ -475,31 +611,53 @@ h2 {
 #hr4 {
   background: #fff;
 }
-.skills-text p {
-  color: #d4d4d5;
-}
 .work {
   overflow: hidden;
   padding: 50px 0;
+  background: #eeeeee;
 }
-.work-content .right-box {
-  width: 40%;
-  display: inline-block;
+.work-content h3 {
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: 300;
 }
-.work-content .school {
-  width: 40%;
-  display: inline-block;
+.work-content .school-box {
+  overflow: visible;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 60%;
+  margin: 50px auto;
+}
+.work-content .school-info,
+.work-content .kuaidi-animation {
+  width: 45%;
+  overflow: visible;
+}
+.work-content .school-info {
+  overflow: visible;
+  padding: 200px 0 0 0;
 }
 .work-content .kuaidi {
-  -webkit-animation: toRight 2s ease-in-out 0s alternate forwards;
-  -o-animation: toRight 2s ease-in-out 0s alternate forwards;
-  animation: toRight 2s ease-in-out 0s alternate forwards;
+  overflow: visible;
+  -webkit-animation: toRight 1.5s ease-in-out 0s alternate forwards;
+  -o-animation: toRight 1.5s ease-in-out 0s alternate forwards;
+  animation: toRight 1.5s ease-in-out 0s alternate forwards;
 }
 .work-content .kuaidi-box {
+  overflow: visible;
   position: relative;
-  width: 500px;
+  width: 1000px;
   height: 400px;
   display: inline-block;
+}
+.work-content .kuaidi1 {
+  overflow: visible;
+  position: relative;
+  left: 1000px;
 }
 .work-content #kdimg {
   position: absolute;
@@ -521,20 +679,66 @@ h2 {
   top: 250px;
   left: 200px;
 }
+.work-content .one-job {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 60%;
+  margin: 50px auto;
+}
+.work-content .one-job .job-info {
+  padding: 100px 0 0 0 ;
+}
+.work-content .one-job .job-info,
+.work-content .one-job .job-img {
+  width: 40%;
+}
+.work-content .one-job .job-img img {
+  width: 60%;
+  margin: 0 auto;
+}
+.work-content .two-jon {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 60%;
+  margin: 50px auto;
+}
+.work-content .two-jon .job-info {
+  padding: 100px 0 0 0;
+}
+.work-content .two-jon .job-info,
+.work-content .two-jon .job-img {
+  width: 40%;
+}
+.work-content .two-jon .job-img img {
+  width: 60%;
+}
 .portfolio {
-  padding: 50px 0;
+  padding: 50px;
   background: url("../img/background.jpg") center no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .portfolio-content {
   width: 100%;
   margin: 0 auto;
 }
-.work-title {
-  color: black;
-}
-#kuaidi {
-  padding-left: 2000px;
+.portfolio-content .portfolio-main {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: space-between;
+  width: 80%;
+  margin: 50px auto;
 }
 .title-head {
   color: #fff;
@@ -563,22 +767,17 @@ h2 {
   margin: 0 6px;
   cursor: pointer;
 }
-.container {
-  width: 900px;
-  margin: 0 auto;
-  height: 600px;
+.portfolio-list li:hover {
+  background: #70bdae;
 }
 .box1 {
   float: left;
   width: 300px;
   height: 300px;
-  background: url("../img/work1.jpg") no-repeat;
   cursor: pointer;
   overflow: hidden;
 }
 .box1-1 {
-  width: 300px;
-  height: 300px;
   opacity: 0;
 }
 .box1:hover .box1-1 {
@@ -631,4 +830,32 @@ h2 {
 h1 {
   text-align: center;
   font-size: 40px;
+}
+.web {
+  background: #eeeeee;
+}
+.social {
+  padding: 50px 0;
+}
+.social p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.social a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background: green;
+  margin: 50px;
+}
+.social i {
+  font-size: 30px;
+  line-height: 60px;
+  color: white;
+}
+.social .orcode {
+  width: 10%;
 }

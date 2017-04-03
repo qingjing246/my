@@ -3,6 +3,9 @@ ul,li,h2,p,H3{
   margin: 0;
 
 }
+div{
+  overflow: hidden;
+}
 p{
   letter-spacing:1px;
 }
@@ -33,6 +36,39 @@ h2{
 }
 .clearfix:after {
   clear: both;
+}
+
+.bganimation(@name,@speed){
+    animation:@name @speed ;
+    -webkit-animation:@name @speed;
+    -moz-animation:@name @speed ;
+}
+.forward{
+    -moz-animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+
+@keyframes bgchange{
+    from{
+        background: #a0a0b4;
+        border:5px solid white;
+    }
+    to{ background: white;
+        border:5px solid #c0c0c0;}
+}
+
+@-webkit-keyframes myAbout{
+    from{ background: #a0a0b4;
+        border:5px solid white;}
+    to{ background: white;
+        border:5px solid #c0c0c0;}
+}
+@-moz-keyframes myAbout{
+    from{ background: #a0a0b4;
+        border:5px solid white;}
+    to{ background: white;
+        border:5px solid #c0c0c0;}
 }
 /*文字弹入动画*/
 @-webkit-keyframes rollIn {
@@ -281,6 +317,9 @@ h2{
   }
 }
 
+/*共用类*/
+
+
 header{
   background: url("../img/head.jpg") center no-repeat;
   width: 100%;
@@ -293,15 +332,19 @@ header{
 
     li{
       display: inline-block;
-      font-size: 30px;
+      font-size: 20px;
       padding: 30px;
     }
     a{
       color:white;
+      &:hover{
+        color: red;
+      }
     }
     .myName{
-      margin-right: 20%;
+      margin-right: 30%;
       color:white;
+      font-size: 40px;
       span{
         color: red;
       }
@@ -332,7 +375,15 @@ header{
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    border:2px solid #fff;
+    border:3px solid #fff;
+    -webkit-box-shadow:0 0 15px #838383;
+    -moz-box-shadow:0 0 15px #838383;
+    box-shadow:0 0 15px #838383;
+    &:hover{
+      -webkit-box-shadow:0 0 15px #f3f3f3;
+      -moz-box-shadow:0 0 15px #f3f3f3;
+      box-shadow:0 0 15px #f3f3f3;
+    }
   }
 }
 hr{
@@ -353,36 +404,85 @@ hr{
   text-align: center;
   margin: 0 auto;
 }
+.about{
+  background: #eeeeee;
+}
 .about-me{
-
   .me-title{
     width: 40%;
     text-align: center;
     margin: 50px auto;
   }
-  .social{
-    a{
-      display: inline-block;
-      width: 60px;
-      height:60px;
-      -webkit-border-radius: 30px;
-      -moz-border-radius: 30px;
-      border-radius: 30px;
-      background: green;
-      margin: 50px;
-    }
 
-    i{
-      font-size: 30px;
-      line-height: 60px;
-      color:white;
-    }
+}
+.about-myinfo{
+    background: #a0a0b4;
+    padding: 20px;
+    border-radius: 20px;
+    width: 50%;
+    margin: 100px auto 100px;
+    text-align: center;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-between;
 
+}
+.about-list{
+
+    display: inline-block;
+    height: 150px;
+
+}
+.list-icon{
+    display: inline-block;
+    width:60px;
+    height: 60px;
+    border:5px solid white;
+    border-radius: 45px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+  .iconfont{
+    color: black;
   }
+    &:hover{
+        .bganimation(bgchange, 1s);
+        .forward;
+        -webkit-box-shadow:0 0 10px #c0c0c0;
+        -moz-box-shadow:0 0 10px #c0c0c0;
+        box-shadow:0 0 10px #c0c0c0;
+    }
+
+}
+.iconfont{
+
+    font-size:40px;
+
+}
+.list-info{
+    color:white;
+    font-size:20px;
+    padding: 20px 0 ;
+    span{
+        margin: 0 5px;
+    }
+}
+.about_info {
+    width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 h2{
   font-size: 40px;
   text-align: center;
+  padding: 40px 0;
 }
 .center{
   text-align: center;
@@ -390,29 +490,59 @@ h2{
 .skills{
   background: #28282e;
   padding: 50px 0 ;
-  color: #fff;
+  color: #f6f6f7;
 }
 .learning-skills{
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
+  text-align: center;
+  h4{
+    font-size: 40px;
+    text-align: center;
+  }
   .learning-title{
     margin: 40px 0;
     font-size: 40px;
     letter-spacing:10px;
   }
-  .nodejs-info{
-    text-align: left;
-    margin: 20px 0;
-    line-height: 20px;
+  .learning-box{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items:flex-start;
+    .vue-img,.node-img{
+      width: 50%;
+    }
+    .nodejs,.vuejs{
+      width: 40%;
+      height: 100%;
+      p{
+        text-align: left;
+      }
+    }
+
   }
-  .vue-img{
-    width: 150px;
+  .future{
+    display:flex;
+    display:-webkit-flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:flex-start;
+  }
+  .php,.mysql,.angular{
+    width: 30%;
+    p{
+      text-align: left;
+    }
+  }
+  .php-img,.mysql-img,.angular-img{
+    width: 50%;
   }
 
-  .mysql-img,.php-img,.angular-img,.react-img{
-  width: 150px;
-    margin: 0 30px;
-  }
+
 }
 .skills-text{
   width: 40%;
@@ -430,38 +560,56 @@ h2{
   background:#fff;
 
 }
-.skills-text{
-  p{
-    color:#d4d4d5;
-  }
-}
 
 .work{
   overflow: hidden;
   padding: 50px 0;
+  background: #eeeeee;
 }
 .work-content{
-  .right-box{
-    width: 40%;
-    display: inline-block;
+  h3{
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: 300;
   }
-  .school{
-    width: 40%;
-    display: inline-block;
+  .school-box{
+    overflow:visible;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 60%;
+    margin: 50px auto;
   }
+  .school-info,.kuaidi-animation{
+    width: 45%;
+    overflow:visible;
+  }
+  .school-info{
+    overflow:visible;
+    padding: 200px 0 0 0;
 
+  }
   .kuaidi{
-
-    -webkit-animation: toRight 2s ease-in-out 0s alternate forwards;
-    -o-animation: toRight 2s ease-in-out 0s alternate forwards;
-    animation: toRight 2s ease-in-out 0s alternate forwards;
+    overflow:visible;
+    -webkit-animation: toRight 1.5s ease-in-out 0s alternate forwards;
+    -o-animation: toRight 1.5s ease-in-out 0s alternate forwards;
+    animation: toRight 1.5s ease-in-out 0s alternate forwards;
   }
   .kuaidi-box{
+    overflow:visible;
     position: relative;
-    width: 500px;
+    width: 1000px;
     height: 400px;
     display: inline-block;
     //-webkit-animation: toTop 0.3s linear infinite;
+  }
+  .kuaidi1{
+    overflow:visible;
+    position: relative;
+    left: 1000px;
   }
   #kdimg{
     position: absolute;
@@ -484,38 +632,99 @@ h2{
     top:250px;
     left:200px;
   }
+  .one-job{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 60%;
+    margin:50px auto;
+    .job-info{
+      padding: 100px 0 0 0 ;
+    }
+    .job-info,.job-img{
+      width: 40%;
+    }
+    .job-img{
+      img{
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .two-jon{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 60%;
+    margin: 50px auto;
+    .job-info{
+      padding: 100px 0 0 0;
+    }
+    .job-info,.job-img{
+      width: 40%;
+    }
+    .job-img{
+      img{
+        width: 60%;
+      }
+    }
+  }
+
+}
+#portfolio{
+
+
 }
 .portfolio{
-  padding: 50px 0;
+  padding: 50px;
   background: url("../img/background.jpg") center no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 .portfolio-content{
-
-
   width:100%;
   margin: 0 auto;
 
+
+  .portfolio-main{
+
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-between;
+    width: 80%;
+    margin: 50px auto;
+  }
+
+
+
 }
-.work-title{
-  color: black;
-}
-#kuaidi{
-  padding-left: 2000px;
-}
+
 .title-head{
   color: #fff;
+
 }
+
 #hr7{
   background: #fff;
 }
 #hr8{
   background: #fff;
 }
+
 .portfolio-list{
   display: block;
   text-align: center;
   padding: 100px 0;
+
   li{
     display: inline-block;
     border: 2px solid #fff;
@@ -528,26 +737,20 @@ h2{
     border-radius: 2px;
     margin: 0 6px;
     cursor:pointer;
-
+    &:hover{
+      background:rgba(112,189,174,1) ;
+    }
   }
 }
-.container{
-  width:900px;
-  margin: 0 auto;
-  height: 600px;
 
-}
 .box1{
   float: left;
   width: 300px;
   height: 300px;
-  background: url("../img/work1.jpg") no-repeat;
   cursor:pointer;
   overflow:hidden;
 }
 .box1-1{
-  width: 300px;
-  height: 300px;
   opacity:0;
 }
 .box1:hover .box1-1{
@@ -604,4 +807,31 @@ h1{
   text-align: center;
   font-size: 40px;
 }
-
+.web{
+  background: #eeeeee;
+}
+.social{
+  padding: 50px 0;
+  p{
+    font-size: 20px;
+    margin: 20px 0;
+  }
+    a{
+        display: inline-block;
+        width: 60px;
+        height:60px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+        background: green;
+        margin: 50px;
+    }
+    i{
+        font-size: 30px;
+        line-height: 60px;
+        color:white;
+    }
+    .orcode{
+      width: 10%;
+    }
+}
