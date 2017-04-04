@@ -150,7 +150,7 @@ h2 {
     -webkit-transform: rotate(-5deg);
   }
   100% {
-    -webkit-transform: rotate(0);
+    -webkit-transform: rotate(0deg);
   }
 }
 @-moz-keyframes swing {
@@ -167,7 +167,7 @@ h2 {
     -moz-transform: rotate(-5deg);
   }
   100% {
-    -moz-transform: rotate(0);
+    -moz-transform: rotate(0deg);
   }
 }
 @-ms-keyframes swing {
@@ -184,7 +184,7 @@ h2 {
     -ms-transform: rotate(-5deg);
   }
   100% {
-    -ms-transform: rotate(0);
+    -ms-transform: rotate(0deg);
   }
 }
 @keyframes swing {
@@ -201,7 +201,7 @@ h2 {
     transform: rotate(-5deg);
   }
   100% {
-    transform: rotate(0);
+    transform: rotate(0deg);
   }
 }
 /*文字弹入动画*/
@@ -218,7 +218,7 @@ h2 {
   }
   100% {
     -webkit-transform-origin: left bottom;
-    -webkit-transform: rotate(0);
+    -webkit-transform: rotate(0deg);
     opacity: 1;
   }
 }
@@ -230,7 +230,7 @@ h2 {
   }
   100% {
     -moz-transform-origin: left bottom;
-    -moz-transform: rotate(0);
+    -moz-transform: rotate(0deg);
     opacity: 1;
   }
 }
@@ -242,7 +242,7 @@ h2 {
   }
   100% {
     -ms-transform-origin: left bottom;
-    -ms-transform: rotate(0);
+    -ms-transform: rotate(0deg);
     opacity: 1;
   }
 }
@@ -254,7 +254,7 @@ h2 {
   }
   100% {
     transform-origin: left bottom;
-    transform: rotate(0);
+    transform: rotate(0deg);
     opacity: 1;
   }
 }
@@ -825,7 +825,9 @@ h2 {
 }
 .info h3 {
   text-align: center;
+  color:#fff;
   padding: 50px 0;
+  font-size: 30px;
 }
 h1 {
   text-align: center;
